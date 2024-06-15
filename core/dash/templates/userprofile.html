@@ -1,0 +1,883 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+
+    <title>Dashboard - NiceAdmin Bootstrap Template</title>
+    <meta content="" name="description" />
+    <meta content="" name="keywords" />
+
+    <!-- Favicons -->
+    <link href="{% static "assets/img/favicon.png" %}" rel="icon" />
+    <link href="{% static "assets/img/apple-touch-icon.png" %}" rel="apple-touch-icon" />
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+      rel="stylesheet"
+    />
+
+    <!-- Vendor CSS Files -->
+    <link href="{% static "assets/vendor/bootstrap/css/bootstrap.min.css" %}"
+    rel="stylesheet" />
+    <link
+      href="{% static "assets/vendor/bootstrap-icons/bootstrap-icons.css" %}"
+      rel="stylesheet"
+    />
+    <link href="{% static "assets/vendor/boxicons/css/boxicons.min.css" %}" rel="stylesheet" />
+    <link href="{% static "assets/vendor/quill/quill.snow.css" %}" rel="stylesheet" />
+    <link href="{% static "assets/vendor/quill/quill.bubble.css" %}" rel="stylesheet" />
+    <link href="{% static "assets/vendor/remixicon/remixicon.css" %}" rel="stylesheet" />
+    <link href="{% static "assets/vendor/simple-datatables/style.css" %}" rel="stylesheet" />
+    <link rel="stylesheet" href="{% static "home/dark-theme.css" %}" /> 
+
+    
+
+    <!-- Template Main CSS File -->
+    <link href="{% static "assets/css/style.css" %}" rel="stylesheet" />
+
+    <!-- =======================================================
+  * Template Name: NiceAdmin
+  * Updated: Mar 09 2023 with Bootstrap v5.2.3
+  * Template URL: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+  <link href="https://fonts.cdnfonts.com/css/credit-card" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@900&display=swap" rel="stylesheet">
+  </head>
+
+  <body>
+    <!-- ======= Header ======= -->
+    <header id="header" class="header fixed-top d-flex align-items-center">
+      <div class="d-flex align-items-center justify-content-between">
+        <a href="{% url 'dash' %}" class="logo d-flex align-items-center ">
+          <img src="{% static "assets/img/logo.png" %}" alt="" />
+          <span class="d-none d-lg-block text-body">JDC BANK</span>
+        </a>
+        <i class="bi bi-list toggle-sidebar-btn text-success"></i>
+      </div>
+      <!-- End Logo -->
+
+      <nav class="header-nav ms-auto">
+        <ul class="d-flex align-items-center">
+          <!-- End Search Icon-->
+
+          <li class="nav-item dropdown">
+            <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
+              <i class="bi bi-bell"></i>
+              {% if messages %}
+                <span class="badge bg-success badge-number">1</span>
+              {% else %} 
+                <span class="badge bg-success badge-number">0</span>
+              {% endif %} 
+            </a><!-- End Notification Icon -->
+
+            <ul 
+            {% if messages %}
+              class="dropdown-menu dropdown-menu-end dropdown-menu-arrow notifications show"
+            {% else %}
+              class="dropdown-menu dropdown-menu-end dropdown-menu-arrow notifications"
+            {% endif %} 
+            >
+              <li class="dropdown-header">
+                {% if messages %}
+                  You have 1 new notification
+                {% else %}
+                You have no new notification
+                {% endif %} 
+              </li>
+
+              {% if messages %}
+                {% for message in messages %}
+                  <li class="notification-item">
+                    <i 
+                    {% if message.tags == "success" %}
+                      class="bi bi-person-fill-check text-success"
+                    {% elif message.tags == "info" %}
+                      class="bi bi-exclamation-circle text-warning"
+                    {% endif %}>
+                    </i>
+                    {{ message }}
+                  </li>
+                {% endfor %}  
+              {% endif %}    
+            </ul>
+            <!-- End Notification Dropdown Items -->
+          </li>
+          <!-- End Notification Nav -->
+
+          <!-- End Messages Nav -->
+
+          <li class="nav-item dropdown pe-3">
+            <a
+              class="nav-link nav-profile d-flex align-items-center pe-0"
+              href="#"
+              data-bs-toggle="dropdown"
+            >
+              <img
+                src="{{ user.member.pix.url }}"
+                alt="Profile" 
+                class="rounded-circle"
+              />
+              <span class="d-none d-md-block dropdown-toggle ps-2"
+                >{{ user.member.fname|capfirst }} {{ user.member.lname|capfirst }}</span
+              > </a
+            ><!-- End Profile Iamge Icon -->
+
+            <ul
+              class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile"
+            >
+              <li class="dropdown-header">
+                <h6>{{user.member.fname|capfirst}} {{ user.member.lname|capfirst }}</h6>
+                <span>{{user.member.accounttype|capfirst}}</span>
+              </li>
+              <li>
+                <hr class="dropdown-divider" />
+              </li>
+
+              <li>
+                <a
+                  class="dropdown-item d-flex align-items-center"
+                  href="{% url 'profile' %}"
+                >
+                  <i class="bi bi-person"></i>
+                  <span>My Profile</span>
+                </a>
+              </li>
+              <li>
+                <hr class="dropdown-divider" />
+              </li>
+
+              <li>
+                <a
+                  class="dropdown-item d-flex align-items-center"
+                  href="{% url 'profile' %}#profile-settings"
+                >
+                  <i class="bi bi-gear"></i>
+                  <span>Account Settings</span>
+                </a>
+              </li>
+              <li>
+                <hr class="dropdown-divider" />
+              </li>
+
+              <li>
+                <a
+                  class="dropdown-item d-flex align-items-center"
+                  href="{% url 'faq' %}"
+                >
+                  <i class="bi bi-question-circle"></i>
+                  <span>Need Help?</span>
+                </a>
+              </li>
+              <li>
+                <hr class="dropdown-divider" />
+              </li>
+
+              <li>
+                <a class="dropdown-item d-flex align-items-center" href="{% url 'logout_user' %}">
+                  <i class="bi bi-box-arrow-right"></i>
+                  <span>Sign Out</span>
+                </a>
+              </li>
+            </ul>
+            <!-- End Profile Dropdown Items -->
+          </li>
+          <!-- End Profile Nav -->
+        </ul>
+      </nav>
+      <!-- End Icons Navigation -->
+    </header>
+    <!-- End Header -->
+
+    <!-- ======= Sidebar ======= -->
+    <aside id="sidebar" class="sidebar">
+      <ul class="sidebar-nav" id="sidebar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'dash' %}">
+            <i class="bi bi-grid-fill text-success" ></i>
+            <span class="text-success">Dashboard</span>
+          </a>
+        </li>
+        <!-- End Dashboard Nav -->
+
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'portfolio' %}">
+            <i class="bi bi-briefcase-fill text-success"></i>
+            <span class="text-success">Portfolio</span>
+          </a>
+        </li>
+
+
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'profile' %}">
+            <i class="bi bi-person-fill text-success"></i>
+            <span class="text-success">Profile</span>
+          </a>
+        </li>
+
+
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'transfer' %}">
+            <i class="bi bi-coin text-success"></i>
+            <span class="text-success">Transfer</span>
+          </a>
+        </li>
+
+
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'history' %}">
+            <i class="bi bi-hourglass-split text-success"></i>
+            <span class="text-success">History</span>
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'contact' %}">
+            <i class="bi bi-envelope-fill text-success"></i>
+            <span class="text-success">Contact Us</span>
+          </a>
+        </li>
+
+
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'faq' %}">
+            <i class="bi bi-question-circle text-success"></i>
+            <span class="text-success">F.A.Q</span>
+          </a>
+        </li>
+
+
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'logout_user' %}">
+            <i class="bi bi-box-arrow-left text-success"></i>
+            <span class="text-success">Log Out</span>
+          </a>
+        </li>
+        <!-- End Forms Nav -->
+      </ul>
+    </aside>
+    <!-- End Sidebar-->
+
+    <main id="main" class="main">
+
+      <div class="pagetitle">
+        <h1>Profile</h1>
+        <nav>
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{% url 'dash' %}">Home</a></li>
+            <li class="breadcrumb-item">Account</li>
+            <li class="breadcrumb-item active">Profile</li>
+          </ol>
+        </nav>
+      </div><!-- End Page Title -->
+      
+  
+      <section class="section profile">
+        <div class="row">
+          <div class="col-xl-4">
+  
+            <div class="card">
+              <div class="card-body profile-card pt-4 d-flex flex-column align-items-center"> 
+                <img src="{{ user.member.pix.url }}" alt="Profile" class="rounded-circle">
+                <h2>{{user.member.fname|capfirst}} {{ user.member.lname|capfirst }}</h2>
+                <h3>{{ user.member.accounttype }}</h3>
+              </div>
+            </div>
+  
+          </div>
+  
+          <div class="col-xl-8">
+  
+            <div class="card">
+              <div class="card-body pt-3">
+                <!-- Bordered Tabs -->
+                <ul class="nav nav-tabs nav-tabs-bordered">
+  
+                  <li class="nav-item">
+                    <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#profile-overview">Overview</button>
+                  </li>
+  
+                  <li class="nav-item">
+                    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#profile-edit">Edit Profile</button>
+                  </li>
+  
+                  <li class="nav-item">
+                    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#profile-settings">Settings</button>
+                  </li>
+  
+                  <li class="nav-item">
+                    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#profile-change-password">Change Password</button>
+                  </li>
+
+                  <li class="nav-item">
+                    <button  
+                      {% if user.guest.fname %} 
+                        class="nav-link" data-bs-toggle="tab" data-bs-target="#verified"
+                      {% else %} 
+                        class="nav-link" data-bs-toggle="tab" data-bs-target="#guestaccount"                    
+                      {% endif %}>
+                      Guest Account</button>
+                  </li>
+  
+                </ul>
+                
+                <div class="tab-content pt-2">
+  
+                  <div class="tab-pane fade show active profile-overview" id="profile-overview">
+                    
+                    <h5 class="card-title">Profile Details</h5>
+  
+                    <div class="row">
+                      <div class="col-lg-3 col-md-7 label">Type of Account </div>
+                      <div class="col-lg-9 col-md-5">{{ user.member.accounttype }}</div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-lg-3 col-md-4 label ">Full Name</div>
+                      <div class="col-lg-9 col-md-8">{{user.member.fname|capfirst}} {{ user.member.lname|capfirst }}</div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-lg-3 col-md-4 label">Date of Birth</div>
+                      <div class="col-lg-9 col-md-8">{{ user.member.DOB|date:"SHORT_DATE_FORMAT" }}</div>
+                    </div>
+  
+                    <div class="row">
+                      <div class="col-lg-3 col-md-4 label">SSN</div>
+                      <div class="col-lg-9 col-md-8">{{ user.member.ssn }}</div>
+                    </div>
+  
+                    <div class="row">
+                      <div class="col-lg-3 col-md-4 label">Address</div>
+                      <div class="col-lg-9 col-md-8">{{ user.member.address }}</div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-lg-3 col-md-4 label">City</div>
+                      <div class="col-lg-9 col-md-8">{{ user.member.city }}</div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-lg-3 col-md-4 label">State</div>
+                      <div class="col-lg-9 col-md-8">{{ user.member.state }}</div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-lg-3 col-md-4 label">PostCode</div>
+                      <div class="col-lg-9 col-md-8">{{ user.member.postcode }}</div>
+                    </div>
+  
+                    <div class="row">
+                      <div class="col-lg-3 col-md-4 label">Country</div>
+                      <div class="col-lg-9 col-md-8">{{ user.member.country }}</div>
+                    </div>
+  
+                    <div class="row">
+                      <div class="col-lg-3 col-md-4 label">Phone</div>
+                      <div class="col-lg-9 col-md-8">01- ({{ user.member.phone|slugify|slice:":3" }}) {{user.member.phone|slugify|slice:"3:6"}}-{{user.member.phone|slugify|slice:"6:"}}</div>
+                    </div>
+  
+                    <div class="row">
+                      <div class="col-lg-3 col-md-4 label">Email</div>
+                      <div class="col-lg-9 col-md-8">{{ user.member.email }}</div>
+                    </div>
+  
+                  </div>
+  
+                  <div class="tab-pane fade profile-edit pt-3" id="profile-edit">
+  
+                    <!-- Profile Edit Form -->
+                    <form method=POST enctype='multipart/form-data'>
+                      {% csrf_token %}
+                      <div class="row mb-3">
+                        <label for="profileImage" class="col-md-4 col-lg-3 col-form-label">Profile Image</label>
+                        <div class="col-md-8 col-lg-9">
+                          {{ form1.pix }}
+                        </div>
+                      </div>
+
+                      <div class="row mb-3">
+                        <label for="Type Of Account" class="col-md-4 col-lg-3 col-form-label">Type Of Account</label>
+                        <div class="col-md-8 col-lg-9">
+                          {{ form1.accounttype }}
+                        </div>
+                      </div>
+  
+                      <div class="row mb-3">
+                        <label for="fullName" class="col-md-4 col-lg-3 col-form-label">First Name</label>
+                        <div class="col-md-8 col-lg-9">
+                          {{ form1.fname }}
+                        </div>
+                      </div>
+
+                      <div class="row mb-3">
+                        <label for="fullName" class="col-md-4 col-lg-3 col-form-label">Last Name</label>
+                        <div class="col-md-8 col-lg-9">
+                          {{ form1.lname }}
+                        </div>
+                      </div>
+
+                      <div class="row mb-3">
+                        <label for="fullName" class="col-md-4 col-lg-3 col-form-label">Date of Birth</label>
+                        <div class="col-md-8 col-lg-9">
+                          {{ form1.DOB }}
+                        </div>
+                      </div>
+                       
+  
+                      <div class="row mb-3">
+                        <label for="ssn" class="col-md-4 col-lg-3 col-form-label">SSN</label>
+                        <div class="col-md-8 col-lg-9">
+                          {{ form1.ssn }}
+                        </div>
+                      </div>
+  
+                      <div class="row mb-3">
+                        <label for="addtess" class="col-md-4 col-lg-3 col-form-label">Address</label>
+                        <div class="col-md-8 col-lg-9">
+                          {{ form1.address }}
+                        </div>
+                      </div>
+
+                      <div class="row mb-3">
+                        <label for="addtess" class="col-md-4 col-lg-3 col-form-label">City</label>
+                        <div class="col-md-8 col-lg-9">
+                          {{ form1.city }}
+                        </div>
+                      </div>
+
+                      <div class="row mb-3">
+                        <label for="addtess" class="col-md-4 col-lg-3 col-form-label">State</label>
+                        <div class="col-md-8 col-lg-9">
+                          {{ form1.state }}
+                        </div>
+                      </div>
+
+                      <div class="row mb-3">
+                        <label for="addtess" class="col-md-4 col-lg-3 col-form-label">PostCode</label>
+                        <div class="col-md-8 col-lg-9">
+                          {{ form1.postcode }}
+                        </div>
+                      </div>
+  
+                      <div class="row mb-3">
+                        <label for="country" class="col-md-4 col-lg-3 col-form-label">Country</label>
+                        <div class="col-md-8 col-lg-9">
+                          {{ form1.country }}
+                        </div>
+                      </div>
+  
+                      <div class="row mb-3">
+                        <label for="Phone" class="col-md-4 col-lg-3 col-form-label">Phone</label>
+                        <div class="col-md-8 col-lg-9">
+                          {{ form1.phone }}
+                        </div>
+                      </div>
+  
+                      <div class="row mb-3">
+                        <label for="Email" class="col-md-4 col-lg-3 col-form-label">Email</label>
+                        <div class="col-md-8 col-lg-9">
+                          {{ form1.email }}
+                        </div>
+                      </div>
+  
+  
+                      <div class="text-center">
+                        <button name="prof" type="submit" class="btn btn-primary rounded-4">Save Changes</button>
+                      </div>
+                    </form><!-- End Profile Edit Form --> 
+                  </div>
+                  <!-- Settings Form -->
+                  <div class="tab-pane fade pt-3 profile-edit" id="profile-settings"> 
+                    <form method=POST>
+                      {% csrf_token %}  
+                      <div class="row mb-3">
+                        <label for="fullName" class="col-md-4 col-lg-3 col-form-label">Email Notifications</label>
+                        <div class="col-md-8 col-lg-9">
+                          <div class="form-check">
+                            {{ form2.Changes }}
+                            <label class="form-check-label" for="changesMade">
+                              Changes made to your account
+                            </label>
+                          </div>
+                          <div class="form-check">
+                            {{ form2.products }}
+                            <label class="form-check-label" for="newProducts">
+                              Information on new services
+                            </label>
+                          </div>
+                          <div class="form-check">
+                            {{ form2.Marketing }}
+                            <label class="form-check-label" for="proOffers">
+                              Marketing and promo offers
+                            </label>
+                          </div>
+                          <div class="form-check ms-4">
+                            <input class="form-check-input" type="checkbox" id="securityNotify" checked disabled>
+                            <label class="form-check-label" for="securityNotify">
+                              Security alerts
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+  
+                      <div class="text-center">
+                        <button name="set" type="submit" class="btn btn-primary rounded-4">Save Changes</button>
+                      </div>
+                    </form><!-- End settings Form -->
+  
+                  </div>
+  
+                  <div class="tab-pane fade pt-3 profile-edit" id="profile-change-password">
+                    <!-- Change Password Form -->
+                    <form method=POST action="{% url 'change_password' %}">
+                      {% csrf_token %}                      
+                      <div class="row mb-3">
+                        <label for="Phone" class="col-md-4 col-lg-3 col-form-label">Old Password</label>
+                        <div class="col-md-8 col-lg-9">
+                          {{ form.old_password }}
+                        </div>
+                      </div>   
+                      <div class="row mb-3">
+                        <label for="Phone" class="col-md-4 col-lg-3 col-form-label">New Password</label>
+                        <div class="col-md-8 col-lg-9">
+                          {{ form.new_password1 }}
+                        </div>
+                      </div> 
+                      <div class="row mb-3">
+                        <label for="Phone" class="col-md-4 col-lg-3 col-form-label">Repeat New Password</label>
+                        <div class="col-md-8 col-lg-9">
+                          {{ form.new_password2 }}
+                        </div>
+                      </div>                   
+                      <button name='guest' type="submit" class="btn btn-primary rounded-4" >Save changes</button>
+      
+
+                      <ul class="my-4">
+                        <li>Your password can’t be too similar to your other personal information.</li>
+                        <li>Your password must contain at least 8 characters.</li>
+                        <li> Your password can’t be a commonly used password.</li>
+                        <li>Your password can’t be entirely numeric.</li>
+                      </ul>
+                    </form>
+                    <!-- End Change Password Form -->                    
+                  </div>
+
+                  <!-- Guest setup -->
+                  <div class="tab-pane fade profile-overview profile-edit" id="verified">
+                    <h5 class="card-title">SETTING UP YOUR GUEST ACCOUNT</h5>
+                    <p class="small fst-italic mb-5">PlEASE BE PATIENT WHILE WE SET UP YOUR GUEST ACCOUNT.</p>
+
+                    <h5 class="card-title">Guest Profile</h5>
+  
+                    <div class="row">
+                      <div class="col-lg-3 col-md-7 label">Type of Account </div>
+                      <div class="col-lg-9 col-md-5">{{ user.guest.accounttype }}</div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-lg-3 col-md-4 label ">Full Name</div>
+                      <div class="col-lg-9 col-md-8">{{user.guest.fname|capfirst}} {{ user.guest.lname|capfirst }}</div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-lg-3 col-md-4 label">Date of Birth</div>
+                      <div class="col-lg-9 col-md-8">{{ user.guest.DOB }}</div>
+                    </div>
+  
+                    <div class="row">
+                      <div class="col-lg-3 col-md-4 label">SSN</div>
+                      <div class="col-lg-9 col-md-8">*****{{ user.guest.ssn|slugify|slice:"5:" }}</div>
+                    </div>
+  
+                    <div class="row">
+                      <div class="col-lg-3 col-md-4 label">Address</div>
+                      <div class="col-lg-9 col-md-8">{{ user.guest.address }}</div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-lg-3 col-md-4 label">City</div>
+                      <div class="col-lg-9 col-md-8">{{ user.guest.city }}</div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-lg-3 col-md-4 label">State</div>
+                      <div class="col-lg-9 col-md-8">{{ user.guest.state }}</div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-lg-3 col-md-4 label">PostCode</div>
+                      <div class="col-lg-9 col-md-8">{{ user.guest.postcode }}</div>
+                    </div>
+  
+                    <div class="row">
+                      <div class="col-lg-3 col-md-4 label">Country</div>
+                      <div class="col-lg-9 col-md-8">{{ user.guest.country }}</div>
+                    </div>
+  
+                    <div class="row">
+                      <div class="col-lg-3 col-md-4 label">Phone</div>
+                      <div class="col-lg-9 col-md-8">01- {{ user.guest.phone }}</div>
+                    </div>
+  
+                    <div class="row">
+                      <div class="col-lg-3 col-md-4 label">Email</div>
+                      <div class="col-lg-9 col-md-8">{{ user.guest.email }}</div>
+                    </div>
+                  </div>
+
+                  <!-- Guest Verification -->
+                  <div class="tab-pane fade profile-overview profile-edit" id="verifyguest"> 
+                    <h5 class="card-title">Guest Account</h5>
+                    <p class="small fst-italic">Your Guest account has been created successfully. Please be patient while we complete our verification process.</p>
+                    
+
+                    <h5 class="card-title">Guest Profile</h5>
+  
+                    <div class="row">
+                      <div class="col-lg-3 col-md-7 label">Type of Account </div>
+                      <div class="col-lg-9 col-md-5">{{ user.guest.accounttype }}</div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-lg-3 col-md-4 label ">Full Name</div>
+                      <div class="col-lg-9 col-md-8">{{user.guest.fname|capfirst}} {{ user.guest.lname|capfirst }}</div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-lg-3 col-md-4 label">Date of Birth</div>
+                      <div class="col-lg-9 col-md-8">{{ user.guest.DOB }}</div>
+                    </div>
+  
+                    <div class="row">
+                      <div class="col-lg-3 col-md-4 label">SSN</div>
+                      <div class="col-lg-9 col-md-8">*****{{ user.guest.ssn|slugify|slice:"5:" }}</div>
+                    </div>
+  
+                    <div class="row">
+                      <div class="col-lg-3 col-md-4 label">Address</div>
+                      <div class="col-lg-9 col-md-8">{{ user.guest.address }}</div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-lg-3 col-md-4 label">City</div>
+                      <div class="col-lg-9 col-md-8">{{ user.guest.city }}</div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-lg-3 col-md-4 label">State</div>
+                      <div class="col-lg-9 col-md-8">{{ user.guest.state }}</div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-lg-3 col-md-4 label">PostCode</div>
+                      <div class="col-lg-9 col-md-8">{{ user.guest.postcode }}</div>
+                    </div>
+  
+                    <div class="row">
+                      <div class="col-lg-3 col-md-4 label">Country</div>
+                      <div class="col-lg-9 col-md-8">{{ user.guest.country }}</div>
+                    </div>
+  
+                    <div class="row">
+                      <div class="col-lg-3 col-md-4 label">Phone</div>
+                      <div class="col-lg-9 col-md-8">01- ({{ user.guest.phone|slugify|slice:":3" }}) {{user.guest.phone|slugify|slice:"3:6"}}-{{user.guest.phone|slugify|slice:"6:"}}</div>
+                    </div>
+  
+                    <div class="row">
+                      <div class="col-lg-3 col-md-4 label">Email</div>
+                      <div class="col-lg-9 col-md-8">{{ user.guest.email }}</div>
+                    </div>
+                  </div>
+                  <!-- Guest Account Form -->
+                  <div class="tab-pane fade profile-edit" id="guestaccount">  
+                    <h5 class="card-title">Registration of Guest Account</h5>
+                    <p class="small fst-italic mb-5">This is a guest account under the main account and subjected to the policies of JDC Bank.Proof of identity is required
+                       to complete the registration. A valid government-issues ID is mandatory according to the KYC policy which is a mandatory framework for banks and financial institutions for customer identification.
+                      Upon completion of registration,it will take some few working days for the account to be setup and operational. A guest online access will be available
+                      as well as a debit card if requested.Please make sure your ID is valid before registration.</p>
+
+                    <form method=POST enctype='multipart/form-data'>
+                      {% csrf_token %}
+                      
+
+                      <div class="row mb-3">
+                        <label for="Type Of Account" class="col-md-4 col-lg-3 col-form-label">Type Of Account</label>
+                        <div class="col-md-8 col-lg-9">
+                          {{ form3.accounttype }}
+                        </div>
+                      </div>
+  
+                      <div class="row mb-3">
+                        <label for="fullName" class="col-md-4 col-lg-3 col-form-label">First Name</label>
+                        <div class="col-md-8 col-lg-9">
+                          {{ form3.fname }}
+                        </div>
+                      </div>
+
+                      <div class="row mb-3">
+                        <label for="fullName" class="col-md-4 col-lg-3 col-form-label">Last Name</label>
+                        <div class="col-md-8 col-lg-9">
+                          {{ form3.lname }}
+                        </div>
+                      </div>
+
+                      <div class="row mb-3">
+                        <label for="DOB" class="col-md-4 col-lg-3 col-form-label">Date of Birth</label>
+                        <div class="col-md-8 col-lg-9">
+                          {{ form3.DOB }}                                                  
+                        </div>
+                      </div>
+                        
+                      <div class="row mb-3">
+                        <label for="ssn" class="col-md-4 col-lg-3 col-form-label">SSN</label>
+                        <div class="col-md-8 col-lg-9">
+                          {{ form3.ssn }}
+                        </div>
+                      </div>
+  
+                      <div class="row mb-3">
+                        <label for="addtess" class="col-md-4 col-lg-3 col-form-label">Address</label>
+                        <div class="col-md-8 col-lg-9">
+                          {{ form3.address }}
+                        </div>
+                      </div>
+
+                      <div class="row mb-3">
+                        <label for="addtess" class="col-md-4 col-lg-3 col-form-label">City</label>
+                        <div class="col-md-8 col-lg-9">
+                          {{ form3.city }}
+                        </div>
+                      </div>
+
+                      <div class="row mb-3">
+                        <label for="addtess" class="col-md-4 col-lg-3 col-form-label">State</label>
+                        <div class="col-md-8 col-lg-9">
+                          {{ form3.state }}
+                        </div>
+                      </div>
+
+                      <div class="row mb-3">
+                        <label for="addtess" class="col-md-4 col-lg-3 col-form-label">PostCode</label>
+                        <div class="col-md-8 col-lg-9">
+                          {{ form3.postcode }}
+                        </div>
+                      </div>
+  
+                      <div class="row mb-3">
+                        <label for="country" class="col-md-4 col-lg-3 col-form-label">Country</label>
+                        <div class="col-md-8 col-lg-9">
+                          {{ form3.country }}
+                        </div>
+                      </div>
+  
+                      <div class="row mb-3">
+                        <label for="Phone" class="col-md-4 col-lg-3 col-form-label">Phone</label>
+                        <div class="col-md-8 col-lg-9">
+                          {{ form3.phone }}
+                        </div>
+                      </div>
+  
+                      <div class="row mb-3">
+                        <label for="Email" class="col-md-4 col-lg-3 col-form-label">Email</label>
+                        <div class="col-md-8 col-lg-9">
+                          {{ form3.email }}
+                        </div>
+                      </div>
+                      
+                      <h4 class="mt-5 " > A Valid Government-issued Photo ID </h4>
+                      <div class=" mt-2">
+                        <div class="row mb-3">
+                          <label for="profileImage" class="col-md-4 col-lg-3 col-form-label">ID FRONT</label>
+                          <div class="col-md-8 col-lg-9">
+                            {{ form3.idfront }}
+                          </div>
+                        </div>
+
+                        <div class="row mb-5">
+                          <label for="profileImage" class="col-md-4 col-lg-3 col-form-label">ID BACK</label>
+                          <div class="col-md-8 col-lg-9">
+                            {{ form3.idback }}
+                          </div>
+                        </div>
+                     </div>
+
+                     <div class="row mb-3">
+                      <label for="fullName" class="col-md-4 col-lg-3 col-form-label">Customer Licensing Agreement</label>
+                      <div class="col-md-8 col-lg-9">
+                        <div class="form-check">
+                          {{ form3.products }}
+                          <label class="form-check-label" for="changesMade">
+                            Federal,banks and financial institutions KYC policy
+                          </label>
+                        </div>
+                        <div class="form-check">
+                          {{ form3.marketing }}
+                          <label class="form-check-label" for="newProducts">
+                            JDC Bank agreement and financial policies
+                          </label>
+                        </div>
+                        <div class="form-check">
+                          {{ form3.policy }}
+                          <label class="form-check-label" for="proOffers">
+                            The Customer Acceptance Policy (CAP)
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+  
+  
+                      <div class="mt-5 text-center">
+                        <button name='guest' type="submit" class="btn btn-primary">Register Guest Account</button>
+                      </div>
+                    </form><!-- End Profile Edit Form -->
+  
+                  </div>
+  
+                </div><!-- End Bordered Tabs -->
+  
+              </div>
+            </div>
+  
+          </div>
+        </div>
+      </section>
+  
+    </main><!-- End #main -->
+
+    <!-- ======= Footer ======= -->
+    <footer id="footer" class="footer mt-5 pt-5">
+      <div class="copyright">
+        &copy; Copyright <strong><span class="text-body">JDC Bank</span></strong
+        >. All Rights Reserved
+      </div>
+    </footer>
+    <!-- End Footer -->
+
+    <a
+      href="#"
+      class="back-to-top d-flex align-items-center justify-content-center"
+      ><i class="bi bi-arrow-up-short"></i
+    ></a>
+
+    <!-- Vendor JS Files -->
+    <script src="{% static "assets/vendor/apexcharts/apexcharts.min.js" %}"></script>
+    <script src="{% static "assets/vendor/bootstrap/js/bootstrap.bundle.min.js" %}"></script>
+    <script src="{% static "assets/vendor/chart.js/chart.umd.js" %}" ></script>
+    <script src="{% static "assets/vendor/echarts/echarts.min.js" %}" ></script>
+    <script src="{% static "assets/vendor/quill/quill.min.js" %}"></script>
+    <script src="{% static "assets/vendor/simple-datatables/simple-datatables.js" %}"></script>
+    <script src="{% static "assets/vendor/tinymce/tinymce.min.js" %}"></script>
+    <script src="{% static "assets/vendor/php-email-form/validate.js" %}"></script>
+
+    <!-- Template Main JS File -->
+    <script src="{% static "assets/js/main.js" %}"></script>
+  </body>
+</html>

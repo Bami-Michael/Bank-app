@@ -1,0 +1,249 @@
+{% load static %}
+<!DOCTYPE html>
+<html class="theme-light" lang="zxx">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link rel="stylesheet" href="{% static "login/bootstrap.min.css" %}" />
+    <link rel="stylesheet" href="{% static "login/flaticon.css" %}" />
+    <link rel="stylesheet" href="{% static "login/remixicon.css" %}" />
+    <link rel="stylesheet" href="{% static "login/owl.carousel.min.css" %}" />
+    <link rel="stylesheet" href="{% static "login/odometer.min.css" %}" />
+    <link rel="stylesheet" href="{% static "login/fancybox.css" %}" />
+    <link rel="stylesheet" href="{% static "login/aos.css" %}" />
+    <link rel="stylesheet" href="{% static "login/style.css" %}" />
+    <link rel="stylesheet" href="{% static "home/dark-theme.css" %}" />
+    <link rel="stylesheet" href="{% static "login/responsive.css" %}" />
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet">
+    <title>JDC Bank &amp; Login Page</title>
+    <link
+      rel="icon"
+      type="image/png"
+      href="{% static "home/logo1.png" %}"
+    />
+  </head>
+  <body style="background-color:#e2e3e5;" data-aos-easing="ease" data-aos-duration="400" data-aos-delay="0" >
+    <div class="loader js-preloader" style="display: none">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    </br>
+    <div class="switch-theme-mode">
+      <label id="switch" class="switch">
+        <input
+          type="checkbox"
+          onchange="toggleTheme()"
+          id="slider"
+          checked="checked"
+        />
+        <span class="slider round"></span>
+      </label>
+    </div>
+
+    <div class=" mx-auto" style="width:40px">
+      <img src="{% static "login/logo1.png" %}" alt="Image" />     
+    </div>
+    <div class="container">     
+        {% if messages %}
+          {% for message in messages %}
+          <div class="alert alert-warning alert-dismissible fade show">
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+            <strong>Warning ! </strong> {{ message }}
+          </div>
+          {% endfor %}
+        {% endif %}               
+    </div>
+
+
+    
+
+
+
+    <div class="page-wrapper" >
+      <div class="content-wrapper container shadow">
+        <section class="Login-wrap ptb-100">
+          <div class="container ">
+            <div class="row ">
+              <div
+                class="col-xl-6 offset-xl-3 col-lg-8 offset-lg-2 col-md-10 offset-md-1"
+              >
+                <div class="login-form-wrap shadow">
+                  <div class="login-header">
+                    <h3>Login Here</h3>
+                    <p>Welcome Back!  Login To Your Account</p>
+                  </div>
+                  <div class="login-form">
+                    <div class="login-body">
+                      <form class="form-wrap" action={% url 'logger' %} method=POST>
+                        {% csrf_token %}
+                        <div class="row">
+                          <div class="col-lg-12">
+                            <div class="form-group">
+                              <input
+                                id="text"
+                                name="username"
+                                type="text"
+                                placeholder="Email Address"
+                                required=""
+                              />
+                            </div>
+                          </div>
+                          <div class="col-lg-12">
+                            <div class="form-group">
+                              <input
+                                id="pwd"
+                                name="password"
+                                type="password"
+                                placeholder="Password"
+                              />
+                            </div>
+                          </div>
+                          <div class="col-lg-6 col-md-6 col-sm-6 col-6">
+                            <div class="checkbox style3">
+                              <input type="checkbox" id="test_1" />
+                              <label for="test_1"> Remember Me </label>
+                            </div>
+                          </div>
+                          <div
+                            class="col-lg-6 col-md-6 col-sm-6 col-6 text-end mb-20"
+                          >
+                            <a
+                            href="{% url "contact2" %}"
+                              class="link style1"
+                              >Forgot Password?</a
+                            >
+                          </div>
+                          <div class="col-lg-12">
+                            <div class="form-group">
+                              <button class="btn style1" type="submit">Login Now</button>
+                            </div>
+                          </div>
+                          <div class="col-md-12 text-center">
+                            <p class="mb-0">
+                              Don’t Have an Account?
+                              <a
+                                class="link style1"
+                                href="{% url "contact2" %}"
+                                >Create One</a
+                              >
+                            </p>
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+                <a href="{% url 'home' %}" class="btn btn-success my-3 mt-5 rounded-pill mx-auto">Home</a>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+      
+
+      <footer class="footer-wrap bg-rock">
+        <div class="container">
+          <img
+            src="{% static "login/footer-shape-1.png" %}"
+            alt="Image"
+            class="footer-shape-one"
+          />
+          <img
+            src="{% static "login/footer-shape-2.png" %}"
+            alt="Image"
+            class="footer-shape-two"
+          />
+          <div class="row pt-100 pb-75">
+            <div class="col-sm-6">
+              <div class="footer-widget">
+                <a
+                  href="#"
+                  class="footer-logo"
+                >
+                  <img src="{% static "login/logo1.png" %}" alt="Image" style="width:40px" />
+                  <h3 class="text-secondary"> JDC Bank </h3>
+                </a>
+                <p class="comp-desc">
+                  We know you work hard to make life better for yourself and the people you care about most. We believe in providing solutions to help you do this throughout your life. Because we value your relationship with us, our promise to you is to always listen to you, provide advice when you need it, and strive to exceed your expectations. Every one of us at JDC Bank believes in this promise and strives to deliver on it each day. And it's the reason we will always approach your needs with a question centered squarely on you.
+                </p>
+                <div class="social-link">
+                  <ul class="social-profile list-style style1">
+                    <li>
+                      <a target="_blank" >
+                        <i class="ri-facebook-fill"></i>
+                      </a>
+                    </li>
+                    <li>
+                      <a target="_blank" >
+                        <i class="ri-twitter-fill"></i>
+                      </a>
+                    </li>
+                    <li>
+                      <a target="_blank" >
+                        <i class="ri-linkedin-fill"></i>
+                      </a>
+                    </li>
+                    <li>
+                      <a target="_blank" >
+                        <i class="ri-pinterest-fill"></i>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            
+
+
+            
+            <div class="col-sm-6">
+              <div class="footer-widget">
+                <h3 class="footer-widget-title">Subscribe</h3>
+                <p class="newsletter-text">
+                  Subscribe to us for latest news on products and services
+                </p>
+                <form action="#" class="newsletter-form">
+                  <input type="email" placeholder="Your Email" />
+                  <button type="button">Subscribe</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="copyright-text">
+          <p>
+            <i class="ri-copyright-line"></i>
+            <script>
+              document.write(new Date().getFullYear());
+            </script>
+             All Rights Reserved </br>
+            <a  target="_blank">JDC BANK</a>
+          </p>
+        </div>
+      </footer>
+    </div>
+
+    <a
+      href="javascript:void(0)"
+      class="back-to-top bounce"
+      style="display: none"
+      ><i class="ri-arrow-up-s-line"></i
+    ></a>
+
+    <script src="{% static "login/jquery.min.js" %}"></script>
+    <script src="{% static "login/bootstrap.bundle.min.js" %}"></script>
+    <script src="{% static "login/form-validator.min.js" %}"></script>
+    <script src="{% static "login/contact-form-script.js" %}"></script>
+    <script src="{% static "login/aos.js" %}"></script>
+    <script src="{% static "login/owl.carousel.min.js" %}"></script>
+    <script src="{% static "login/odometer.min.js" %}"></script>
+    <script src="{% static "login/fancybox.js" %}"></script>
+    <script src="{% static "login/jquery.appear.js" %}"></script>
+    <script src="{% static "login/tweenmax.min.js" %}"></script>
+    <script src="{% static "login/main.js" %}"></script>
+  </body>
+</html>

@@ -1,0 +1,1112 @@
+{% load static %}
+<!DOCTYPE html>
+<html class="theme-light" lang="zxx">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link rel="stylesheet" href="{% static "home/bootstrap.min.css" %}" /> 
+    <link rel="stylesheet" href="{% static "home/flaticon.css" %}" /> 
+    <link rel="stylesheet" href="{% static "home/remixicon.css" %}" /> 
+    <link rel="stylesheet" href="{% static "home/owl.carousel.min.css" %}" /> 
+    <link rel="stylesheet" href="{% static "home/odometer.min.css" %}" /> 
+    <link rel="stylesheet" href="{% static "home/fancybox.css" %}" /> 
+    <link rel="stylesheet" href="{% static "home/aos.css" %}" /> 
+    <link rel="stylesheet" href="{% static "home/style.css" %}" /> 
+    <link rel="stylesheet" href="{% static "home/dark-theme.css" %}" /> 
+    <link rel="stylesheet" href="{% static "home/responsive.css" %}" />
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet">
+    
+    <title>JDC BANK</title>
+    <link
+      rel="icon"
+      type="image/png"
+      href="{% static "home/logo1.png" %}"
+    />
+  </head>
+  <body data-aos-easing="ease" data-aos-duration="400" data-aos-delay="0">
+    <div class="loader js-preloader" style="display: none">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    
+    
+    <div class="switch-theme-mode">
+    </br>
+    </br>
+    </br>
+      <label id="switch" class="switch">
+        <input
+          type="checkbox"
+          onchange="toggleTheme()"
+          id="slider"
+          checked="checked"
+        />
+        <span class="slider round"></span>
+      </label>
+    </div>
+
+
+    <div class="page-wrapper">
+      <header class="header-wrap style1">
+        <div class="header-bottom">
+          <div class="container">
+            <nav class="navbar navbar-expand-md navbar-light">
+              <a
+                class="navbar-brand"
+                href="#"
+              >
+                <img class="logo-light" style="width:30px" src="{% static "home/logo.png" %}" alt="logo"/>
+                <img
+                  class="logo-dark" style="width:30px"
+                  src="{% static "home/logo.png" %}"
+                  alt="logo"
+                />
+              </a>
+              <h3 class="mt-1"> JDC BANK</h3>
+              <div
+                class="collapse navbar-collapse main-menu-wrap"
+                id="navbarSupportedContent">
+                <div class="menu-close xl-none">
+                  <a href="javascript:void(0)">
+                    <i class="ri-close-line"></i
+                  ></a>
+                </div>
+                <ul class="navbar-nav ms-auto">
+                  <li class="nav-item has-dropdown">
+                    <span class="menu-expand"
+                      ><i class="ri-arrow-down-s-line"></i
+                    ></span>
+                    <a href="{% url 'home' %}" class="nav-link active">
+                      Home 
+                      
+                    </a>
+                    
+                  </li>
+                  <li class="nav-item">
+                    <a
+                    href="{% url 'aboutus' %}"
+                      class="nav-link"
+                    >
+                      About Us
+                    </a>
+                  </li>
+                  <li class="nav-item has-dropdown">
+                    <span class="menu-expand"
+                      ></span>
+                    <a href="{% url 'dash' %}" class="nav-link">
+                      Service
+                      
+                    </a>
+                    
+                  </li>
+                  
+                  
+                  <li class="nav-item">
+                    <a
+                     href="{% url 'contact2' %}"
+                      class="nav-link"
+                      >Contact Us</a
+                    >
+                  </li>
+                  <li class="nav-item xl-none">
+                    <a
+                      href="{% url 'logger' %}"
+                      class="btn style1"
+                      >LOG IN</a
+                    >
+                  </li>
+                </ul>
+                <div class="others-options lg-none">
+                  <div class="header-btn lg-none">
+                    <a
+                      href="{% url 'logger' %}"
+                      class="btn style1 bg-success"
+                      >LOG IN</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </nav>
+            
+            <div class="mobile-bar-wrap">          
+              <div class="mobile-menu xl-none">
+                <a href="javascript:void(0)"><i class="ri-menu-line"></i></a>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+      </header>
+
+      <section class="hero-wrap style1 bg-spring">
+        <img
+          src="{% static "home/hero-shape-1.png" %}"
+          alt="Image"
+          class="hero-shape-one"
+        />
+        <img
+          src="{% static "home/hero-shape-2.png" %}"
+          alt="Image"
+          class="hero-shape-two"
+        />
+        <img
+          src="{% static "home/hero-shape-3.png" %}"
+          alt="Image"
+          class="hero-shape-three"
+        />
+        <img
+          src="{% static "home/hero-shape-4.png" %}"
+          alt="Image"
+          class="hero-shape-four md-none"
+        />
+        <div class="hero-slider-two owl-carousel owl-loaded owl-drag">
+          <div class="owl-stage-outer owl-height" style="height: 686.367px">
+            <div
+              class="owl-stage"
+              style="
+                transform: translate3d(-3077px, 0px, 0px);
+                transition: all 0s ease 0s;
+                width: 10772px;
+              "
+            >
+              
+              <div
+                class="owl-item cloned"
+                style="width: 1518.8px; margin-right: 20px">
+                <div class="hero-slide-item">
+                  <div class="container-fluid">
+                    <div class="row align-items-center">
+                      <div class="col-lg-6">
+                        <div class="hero-content">
+                          <span>Reliable. Zero Service Charge </span>
+                          <h1>Move Your Money In Easy Secured Steps</h1>
+                          <p>
+                            We are proud of our State of the Art banking system.Fast and secure 
+                            transactions with zero service charge within our banks and negligible charges with 
+                            other banks
+                          </p>
+                          <a
+                            href="{% url "logger" %}"
+                            class="btn style1"
+                            >LOG IN</a
+                          >
+                        </div>
+                      </div>
+                      <div class="col-lg-6">
+                        <div class="hero-img-wrap">
+                          <img src="{% static "home/hero-slide-5.png" %}" alt="Image" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="owl-item cloned"
+                style="width: 1518.8px; margin-right: 20px">
+                <div class="hero-slide-item">
+                  <div class="container-fluid">
+                    <div class="row align-items-center">
+                      <div class="col-lg-6">
+                        <div class="hero-content">
+                          <span>Easy. Fastest . Secure </span>
+                          <h1>Secured &amp; Easy Online Payment Solution</h1>
+                          <p>
+                            Fast and secure way of moving your money from one bank to another.Make fast and secure Payments 
+                            and pay for utilities without worry.
+                          </p>
+                          <a
+                            href="{% url "logger" %}"
+                            class="btn style1"
+                            >LOG IN</a
+                          >
+                        </div>
+                      </div>
+                      <div class="col-lg-6">
+                        <div class="hero-img-wrap">
+                          <img src="{% static "home/hero-slide-6.png" %}" alt="Image" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="owl-item active"
+                style="width: 1518.8px; margin-right: 20px"
+              >
+                <div class="hero-slide-item">
+                  <div class="container-fluid">
+                    <div class="row align-items-center">
+                      <div class="col-lg-6">
+                        <div class="hero-content">
+                          <span>Fast. Secure. Reliable </span>
+                          <h1>Fast,Secure &amp; Reliable Banking</h1>
+                          <p>
+                            We are proud of our State of the Art banking system.Fast, secure and reliable.
+                          </p>
+                          <a
+                            href="{% url "logger" %}"
+                            class="btn style1"
+                            >LOG IN</a
+                          >
+                        </div>
+                      </div>
+                      <div class="col-lg-6">
+                        <div class="hero-img-wrap">
+                          <img src="{% static "home/hero-slide-4.png" %}" alt="Image" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="owl-item" style="width: 1518.8px; margin-right: 20px">
+                <div class="hero-slide-item">
+                  <div class="container-fluid">
+                    <div class="row align-items-center">
+                      <div class="col-lg-6">
+                        <div class="hero-content">
+                          <span>Investment apportunities </span>
+                          <h1>stocks and bonds</h1>
+                          <p>
+                            We are here for you in securing the best investment portfolio, 
+                            dont just invest blind, invest with us and we will help you grow.
+                          </p>
+                          <a
+                            href="{% url "logger" %}"
+                            class="btn style1"
+                            >LOG IN</a
+                          >
+                        </div>
+                      </div>
+                      <div class="col-lg-6">
+                        <div class="hero-img-wrap">
+                          <img src="{% static "home/hero-slide-5.png" %}" alt="Image" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="owl-item" style="width: 1518.8px; margin-right: 20px">
+                <div class="hero-slide-item">
+                  <div class="container-fluid">
+                    <div class="row align-items-center">
+                      <div class="col-lg-6">
+                        <div class="hero-content">
+                          <span>Online Bnaking </span>
+                          <h1>Secured &amp; Easy Online Payment Solution</h1>
+                          <p>
+                            Our online banking system is available to you 24/7, we are always there when you need it with 
+                            minimal to no down time and fast and secure transactions.
+                          </p>
+                          <a
+                            href="{% url "logger" %}"
+                            class="btn style1"
+                            >LOG IN</a
+                          >
+                        </div>
+                      </div>
+                      <div class="col-lg-6">
+                        <div class="hero-img-wrap">
+                          <img src="{% static "home/hero-slide-6.png" %}" alt="Image" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="owl-item cloned"
+                style="width: 1518.8px; margin-right: 20px"
+              >
+                <div class="hero-slide-item">
+                  <div class="container-fluid">
+                    <div class="row align-items-center">
+                      <div class="col-lg-6">
+                        <div class="hero-content">
+                          <span>Credit Card </span>
+                          <h1>Credit Line</h1>
+                          <p>
+                            Choose from one of many different packages and line of credit, take advantage of our flexible and 
+                            fast credit check system and apply for a credit line.
+                          </p>
+                          <a
+                            href="{% url "logger" %}"
+                            class="btn style1"
+                            >LOG IN</a
+                          >
+                        </div>
+                      </div>
+                      <div class="col-lg-6">
+                        <div class="hero-img-wrap">
+                          <img src="{% static "home/hero-slide-4.png" %}" alt="Image" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="owl-item cloned"
+                style="width: 1518.8px; margin-right: 20px"
+              >
+                <div class="hero-slide-item">
+                  <div class="container-fluid">
+                    <div class="row align-items-center">
+                      <div class="col-lg-6">
+                        <div class="hero-content">
+                          <span>Off-Shore Account </span>
+                          <h1>your money,your business</h1>
+                          <p>
+                            Keep your money to yourself in our state of the art off-shore account away from authorities and institution 
+                            looking to take advantage of you.
+                          </p>
+                          <a
+                            href="{% url "logger" %}"
+                            class="btn style1"
+                            >LOG IN</a
+                          >
+                        </div>
+                      </div>
+                      <div class="col-lg-6">
+                        <div class="hero-img-wrap">
+                          <img src="{% static "home/hero-slide-5.png" %}" alt="Image" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="owl-nav">
+            <button type="button" role="presentation" class="owl-prev">
+              <i class="ri-arrow-left-s-line"></i></button
+            ><button type="button" role="presentation" class="owl-next">
+              <i class="ri-arrow-right-s-line"></i>
+            </button>
+          </div>
+          <div class="owl-dots disabled"></div>
+        </div>
+      </section>
+
+      <section class="about-wrap style1 ptb-100">
+        <div class="container">
+          <div class="row gx-5 align-items-center">
+            <div class="col-lg-6">
+              <div class="about-img-wrap">
+                <img
+                  src="{% static "home/about-shape-1.png" %}"
+                  alt="Image"
+                  class="about-shape-one bounce"
+                />
+                <img
+                  src="{% static "home/about-shape-2.png" %}"
+                  alt="Image"
+                  class="about-shape-two moveHorizontal"
+                />
+                <img
+                  src="{% static "home/about-img-1.png" %}"
+                  alt="Image"
+                  class="about-img"
+                />
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="about-content">
+                <img
+                  src="{% static "home/about-shape-3.png" %}"
+                  alt="Image"
+                  class="about-shape-three"
+                />
+                <div class="content-title style1">
+                  <span>Smart Banking</span>
+                  <h2>The Better Way To Save &amp; Invest with Online Banking</h2>
+                  <p>
+                    Bank smart by banking with our state of the art banking system, our fast and secure online banking system 
+                    with highest return on your investment portfolio.Take advantage of our credit and debit cards accessible anywhere 
+                    with no ATM fees and minimum balance.We are best in the business
+                  </p>
+                </div>
+                <ul class="content-feature-list style1 list-style">
+                  <li>
+                    <span><i class="ri-check-double-line"></i></span>Cards that work
+                    all across the world.
+                  </li>
+                  <li>
+                    <span><i class="ri-check-double-line"></i></span>Highest Returns on
+                    your investments.
+                  </li>
+                  <li>
+                    <span><i class="ri-check-double-line"></i></span>No ATM fees. No
+                    minimum balance. No overdrafts.
+                  </li>
+                </ul>
+                <a
+                href="{% url 'aboutus' %}"
+                  class="btn style1"
+                  >More About us</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="feature-wrap pt-100 pb-75 bg-albastor">
+        <div class="container">
+          <div class="section-title style1 text-center mb-40">
+            <span>Our Feature</span>
+            <h2>Payment Services Worldwide</h2>
+          </div>
+          <div class="row justify-content-center">
+            <div class="col-xl-4 col-lg-6 col-md-6">
+              <div class="feature-card style1">
+                <div class="feature-info">
+                  <div class="feature-title">
+                    <span
+                      ><img src="{% static "home/feature-icon-4.png" %}" alt="Image"
+                    /></span>
+                    <h3>Protect Your Card</h3>
+                  </div>
+                  <p>
+                    With our state of the art anti-fraud security system, your bank cards are protected from 
+                    fraud and malicious vendors,Shop with peace of mind.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-4 col-lg-6 col-md-6">
+              <div class="feature-card style1">
+                <div class="feature-info">
+                  <div class="feature-title">
+                    <span
+                      ><img src="{% static "home/feature-icon-5.png" %}" alt="Image"
+                    /></span>
+                    <h3>Send Money</h3>
+                  </div>
+                  <p>
+                    Send money to your friends and loved ones using our fast and secure online money 
+                    transfer with zero fee within our bank and low fee to other banks.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-4 col-lg-6 col-md-6">
+              <div class="feature-card style1">
+                <div class="feature-info">
+                  <div class="feature-title">
+                    <span
+                      ><img src="{% static "home/feature-icon-6.png" %}" alt="Image"
+                    /></span>
+                    <h3>Online Banking</h3>
+                  </div>
+                  <p>
+                    Have access to your account at any time you want, check your balance, make a transfer and do much more
+                    all at the comfort of your mobile device.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="security-wrap ptb-100">
+        <div class="container">
+          <div class="row gx-5 align-items-center">
+            <div class="col-lg-6 col-12 order-lg-1 order-2">
+              <div class="security-content">
+                <div class="content-title style1">
+                  <span>Banking Security</span>
+                  <h2>The Safest Way To Transact Safety is a priority!</h2>
+                  <p>
+                    Safety is a priority with us, We take pride in knowing 
+                    that your money is safe with us be it a money transfer 
+                    or ATM withdrawal anytime anywhere.
+                  </p>
+                </div>
+                <div class="feature-item-wrap">
+                  <div class="feature-item">
+                    <div class="feature-icon">
+                      <img src="{% static "home/security-icon-1.png" %}" alt="Image" />
+                    </div>
+                    <div class="feature-text">
+                      <h3>Pay Online Securely</h3>
+                      <p>
+                        Shop safely with our fraud detection and protection system.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="feature-item">
+                    <div class="feature-icon">
+                      <img src="{% static "home/security-icon-2.png" %}" alt="Image" />
+                    </div>
+                    <div class="feature-text">
+                      <h3>Send Money in no time</h3>
+                      <p>
+                        Secure ACH and Wire transfers are at your finger tip.Fast and reliable.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6 col-12 order-lg-2 order-1">
+              <div class="security-img-wrap">
+                <img
+                  src="{% static "home/security-shape-1.png" %}"
+                  alt="Image"
+                  class="security-shape-one"
+                />
+                <img
+                  src="{% static "home/security-shape-2.png" %}"
+                  alt="Image"
+                  class="security-shape-two"
+                />
+                <img src="{% static "home/security-1.png" %}" alt="Image" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="service-wrap style1 pt-100 pb-75">
+        <div class="container">
+          <div class="row gx-5 align-items-center">
+            <div class="col-xl-6 col-lg-12 service-card-wrap">
+              <div class="row">
+                <div class="col-md-6 mmt-45">
+                  <div class="service-card style1">
+                    <span class="service-icon">
+                      <img src="{% static "home/service-icon-1.png" %}" alt="Image" />
+                    </span>
+                    <h3>
+                      <a
+                        
+                        >Deadline Reminders</a
+                      >
+                    </h3>
+                    <p>
+                      Never miss a deadline again with our payment deadline reminder and auto responce.
+                    </p>
+                  </div>
+                  <div class="service-card style1">
+                    <span class="service-icon">
+                      <img src="{% static "home/service-icon-2.png" %}" alt="Image" />
+                    </span>
+                    <h3>
+                      <a
+                        
+                        >Status Functionality</a
+                      >
+                    </h3>
+                    <p>
+                      Know exactly the status of your transaction so you can be prepared.
+                    </p>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="service-card style1">
+                    <span class="service-icon">
+                      <img src="{% static "home/service-icon-3.png" %}" alt="Image" />
+                    </span>
+                    <h3>
+                      <a
+                        
+                        >Simple Dashboard</a
+                      >
+                    </h3>
+                    <p>
+                      See everything going on with your account including the stock market so you can make better descisions.
+                    </p>
+                  </div>
+                  <div class="service-card style1">
+                    <span class="service-icon">
+                      <img src="{% static "home/service-icon-4.png" %}" alt="Image" />
+                    </span>
+                    <h3>
+                      <a
+                        
+                        >Email Notification</a
+                      >
+                    </h3>
+                    <p>
+                      Get immediate email notifications of activities on your account.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-6 col-lg-12">
+              <div class="service-content">
+                <div class="content-title style1">
+                  <span>Our Services</span>
+                  <h2>Providing Services For The Last 25 Years With Reputation</h2>
+                  <p>
+                    We have been providing a secure and reliable banking solutions 
+                    to customers around the world for over 25 years and we are proud of
+                    our achievements
+                  </p>
+                  <p>
+                    With multiple awards won and millions of customers who trust and rely on 
+                    us to carry out their day to day banking activities.Your satisfaction is
+                    our priority.
+                  </p>
+                </div>
+                <a
+                href="{% url 'contact2' %}"
+                  class="btn style1"
+                  >All Our Services</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="app-wrap style3 ptb-100">
+        <div class="container">
+          <div class="row align-items-center gx-5">
+            <div class="col-lg-6">
+              <div class="app-img-wrap">
+                <img class="bounce" src="{% static "home/app-1.png" %}" alt="Image" />
+                <img
+                  class="app-shape-one"
+                  src="{% static "home/app-shape-1.png" %}"
+                  alt="Image"
+                />
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="app-content">
+                <div class="content-title style1">
+                  <span>Register for Online Banking</span>
+                  <h2>You Can Find All The Things You Need In Our Online Banking</h2>
+                  <p>
+                    Banking at the tip of your finger at the comfort of your mobile device in your home or outside,
+                     We are always ready to serve you. All the things you need are readily available to you 
+                     in our online banking portal, Login and get things done safe and secure
+                  </p>
+                </div>
+                <div class="app-btn">
+                  <a href="{% url 'dash' %}" class="btn btn-success my-3 rounded-pill"> LOG  IN    </a> 
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="testimonial-wrap pt-100 pb-75 bg-albastor">
+        <div class="container">
+          <div class="row">
+            <div class="col-xl-6 offset-xl-3 col-lg-8 offset-lg-2">
+              <div class="section-title style1 text-center mb-40">
+                <span>Our Testimonials</span>
+                <h2>What Client Says About Us</h2>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-slider-one owl-carousel owl-loaded owl-drag">
+            <div class="owl-stage-outer owl-height" style="height: 320px">
+              <div
+                class="owl-stage"
+                style="
+                  transform: translate3d(-1320px, 0px, 0px);
+                  transition: all 0s ease 0s;
+                  width: 5284px;
+                "
+              >
+                <div
+                  class="owl-item cloned"
+                  style="width: 415.333px; margin-right: 25px"
+                >
+                  <div class="testimonial-card style1">
+                    <div class="client-info-area">
+                      <div class="client-info-wrap">
+                        <div class="client-img">
+                          <img src="{% static "home/client-4.jpg" %}" alt="Image" />
+                        </div>
+                      </div>
+                      <div class="quote-icon">
+                        
+                      </div>
+                    </div>
+                    <p class="client-quote">
+                      10 years and still counting, it has been amazing for far.
+                    </p>
+                    <div class="client-info">
+                      <h3>Jason Oliver</h3>
+                      <span>Enterpreneur</span>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="owl-item cloned"
+                  style="width: 415.333px; margin-right: 25px"
+                >
+                  <div class="testimonial-card style1">
+                    <div class="client-info-area">
+                      <div class="client-info-wrap">
+                        <div class="client-img">
+                          <img src="{% static "home/client-5.jpg" %}" alt="Image" />
+                        </div>
+                      </div>
+                      <div class="quote-icon">
+                        
+                      </div>
+                    </div>
+                    <p class="client-quote">
+                      My Business would not have survived without you guys, 
+                      thanks for been there and been reliable.
+                    </p>
+                    <div class="client-info">
+                      <h3>Chris Robinson</h3>
+                      <span>MD, ITec</span>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="owl-item cloned"
+                  style="width: 415.333px; margin-right: 25px"
+                >
+                  <div class="testimonial-card style1">
+                    <div class="client-info-area">
+                      <div class="client-info-wrap">
+                        <div class="client-img">
+                          <img src="{% static "home/client-6.jpg" %}" alt="Image" />
+                        </div>
+                      </div>
+                      <div class="quote-icon">
+                        
+                      </div>
+                    </div>
+                    <p class="client-quote">
+                      Never a failed transaction or any weird issues which i got used to with
+                      other banks, always fast and reliable whenever i needed to do anything.
+                    </p>
+                    <div class="client-info">
+                      <h3>Kelvin Owen</h3>
+                      <span>Enterpreneur</span>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="owl-item active"
+                  style="width: 415.333px; margin-right: 25px"
+                >
+                  <div class="testimonial-card style1">
+                    <div class="client-info-area">
+                      <div class="client-info-wrap">
+                        <div class="client-img">
+                          <img src="{% static "home/client-1.jpg" %}" alt="Image" />
+                        </div>
+                      </div>
+                      <div class="quote-icon">
+                        
+                      </div>
+                    </div>
+                    <p class="client-quote">
+                      From sending money to my suppliers to making smart investments,i can always count on you guys
+                    </p>
+                    <div class="client-info">
+                      <h3>Jim Morison</h3>
+                      <span>Sales Manager, OAT</span>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="owl-item active"
+                  style="width: 415.333px; margin-right: 25px"
+                >
+                  <div class="testimonial-card style1">
+                    <div class="client-info-area">
+                      <div class="client-info-wrap">
+                        <div class="client-img">
+                          <img src="{% static "home/client-2.jpg" %}" alt="Image" />
+                        </div>
+                      </div>
+                      <div class="quote-icon">
+                        
+                      </div>
+                    </div>
+                    <p class="client-quote">
+                      One button away from sending money to my wife,kids and family
+                      never any issues,super reliable.
+                    </p>
+                    <div class="client-info">
+                      <h3>Alex Jayden</h3>
+                      <span>CEO, IBAC</span>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="owl-item active"
+                  style="width: 415.333px; margin-right: 25px"
+                >
+                  <div class="testimonial-card style1">
+                    <div class="client-info-area">
+                      <div class="client-info-wrap">
+                        <div class="client-img">
+                          <img src="{% static "home/client-3.jpg" %}" alt="Image" />
+                        </div>
+                      </div>
+                      <div class="quote-icon">
+                       
+                      </div>
+                    </div>
+                    <p class="client-quote">
+                      You guys are the back bone of my business and establishments
+                      and i wouldnt have it another way.
+                    </p>
+                    <div class="client-info">
+                      <h3>Tom Hill</h3>
+                      <span>Engineer, Olleo</span>
+                    </div>
+                  </div>
+                </div>
+              
+              </div>
+            </div>
+            <div class="owl-nav">
+              <button type="button" role="presentation" class="owl-prev">
+                <i class="ri-arrow-left-s-line"></i></button
+              ><button type="button" role="presentation" class="owl-next">
+                <i class="ri-arrow-right-s-line"></i>
+              </button>
+            </div>
+            <div class="owl-dots disabled"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="cta-wrap style1 ptb-100">
+        <div class="container">
+          <img
+            src="{% static "home/cta-shape-1.png" %}"
+            alt="Image"
+            class="cta-shape-one xs-none"
+          />
+          <img
+            src="{% static "home/cta-shape-2.png" %}"
+            alt="Image"
+            class="cta-shape-two xs-none"
+          />
+          <div class="row">
+            <div class="col-xl-6 offset-xl-3 col-lg-8 offset-lg-2">
+              <div class="content-title style1 text-center mb-40">
+                <span>Contact Us</span>
+                <h2>JDC Bank Is A Quick Solution For Personal & Business Payments</h2>
+              </div>
+              <div class="cta-btn">
+                <a
+                  href="{% url 'dash' %}"
+                  class="btn style1"
+                  >Personal Account</a
+                >
+                <a
+                  href="{% url 'dash' %}"
+                  class="btn style3"
+                  >Business Account</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <footer class="footer-wrap bg-rock">
+        <div class="container">
+          <img
+            src="{% static "home/footer-shape-1.png" %}"
+            alt="Image"
+            class="footer-shape-one"
+          />
+          <img
+            src="{% static "home/footer-shape-2.png" %}"
+            alt="Image"
+            class="footer-shape-two"
+          />
+          <div class="row pt-100 pb-75">
+            <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6">
+              <div class="footer-widget">
+                <a
+                  
+                  class="footer-logo"
+                >
+                  <img src="{% static "home/logo1.png" %}" alt="Image" />
+                </a>
+                <p class="comp-desc">
+                  We know you work hard to make life better for yourself and the people you care about most. We believe in providing solutions to help you do this throughout your life. Because we value your relationship with us, our promise to you is to always listen to you, provide advice when you need it, and strive to exceed your expectations. Every one of us at JDC Bank believes in this promise and strives to deliver on it each day. And it's the reason we will always approach your needs with a question centered squarely on you.
+                </p>
+                <div class="social-link">
+                  <ul class="social-profile list-style style1">
+                    <li>
+                      <a target="_blank" >
+                        <i class="ri-facebook-fill"></i>
+                      </a>
+                    </li>
+                    <li>
+                      <a target="_blank" >
+                        <i class="ri-twitter-fill"></i>
+                      </a>
+                    </li>
+                    <li>
+                      <a target="_blank" >
+                        <i class="ri-linkedin-fill"></i>
+                      </a>
+                    </li>
+                    <li>
+                      <a target="_blank" >
+                        <i class="ri-pinterest-fill"></i>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
+              <div class="footer-widget">
+                <h3 class="footer-widget-title">Our Company</h3>
+                <ul class="footer-menu list-style">
+                  <li>
+                    <a
+                      
+                    >
+                    <i class="ri-arrow-right-s-line"></i>
+                      Company &amp; Team
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      
+                    >
+                    <i class="ri-arrow-right-s-line"></i>
+                      Services
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      
+                    >
+                    <i class="ri-arrow-right-s-line"></i>
+                      News &amp; Blog
+                    </a>
+                  </li>
+                  
+                  <li>
+                    <a
+                      
+                    >
+                    <i class="ri-arrow-right-s-line"></i>
+                      Privacy Policy
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-xl-2 col-lg-2 col-md-6 col-sm-6">
+              <div class="footer-widget">
+                <h3 class="footer-widget-title">Products</h3>
+                <ul class="footer-menu list-style">
+                  <li>
+                    <a
+                      
+                    >
+                    <i class="ri-arrow-right-s-line"></i>
+                      Online Payment
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      
+                    >
+                    <i class="ri-arrow-right-s-line"></i>
+                      Deposit Skim
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      
+                    >
+                    <i class="ri-arrow-right-s-line"></i>
+                      Online Shopping
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      
+                    >
+                    <i class="ri-arrow-right-s-line"></i>
+                      Master Card
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      
+                    >
+                    <i class="ri-arrow-right-s-line"></i>
+                      Receive Money
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      
+                    >
+                    <i class="ri-arrow-right-s-line"></i>
+                      Affiliate Program
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
+              <div class="footer-widget">
+                <h3 class="footer-widget-title">Subscribe</h3>
+                <p class="newsletter-text">
+                  Subscribe to us for latest news on products and services
+                </p>
+                <form action="#" class="newsletter-form">
+                  <input type="email" placeholder="Your Email" />
+                  <button type="button">Subscribe</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="copyright-text">
+          <p>
+            <i class="ri-copyright-line"></i>2023 JDC BANK. All Rights Reserved By
+            <a  target="_blank">DJC GLOBAL</a>
+          </p>
+        </div>
+      </footer>
+    </div>
+
+    <a
+      href="javascript:void(0)"
+      class="back-to-top bounce"
+      style="display: none"
+      ><i class="ri-arrow-up-s-line"></i>
+    </a>
+
+    <script src="{% static "home/jquery.min.js" %}"> </script>
+    <script src="{% static "home/bootstrap.bundle.min.js" %}"></script>
+    <script src="{% static "home/form-validator.min.js" %}"></script>
+    <script src="{% static "home/contact-form-script.js" %}"></script>
+    <script src="{% static "home/aos.js" %}"></script>
+    <script src="{% static "home/owl.carousel.min.js" %}"></script>
+    <script src="{% static "home/odometer.min.js" %}"></script>
+    <script src="{% static "home/fancybox.js" %}"></script>
+    <script src="{% static "home/jquery.appear.js" %}"></script>
+    <script src="{% static "home/tweenmax.min.js" %}"></script>
+    <script src="{% static "home/main.js" %}"></script>
+  </body>
+</html>

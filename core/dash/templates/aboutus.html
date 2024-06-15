@@ -1,0 +1,513 @@
+{% load static %}
+<!DOCTYPE html>
+<html class="theme-light" lang="zxx">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link rel="stylesheet" href="{% static "home/bootstrap.min.css" %}" /> 
+    <link rel="stylesheet" href="{% static "home/flaticon.css" %}" /> 
+    <link rel="stylesheet" href="{% static "home/remixicon.css" %}" /> 
+    <link rel="stylesheet" href="{% static "home/owl.carousel.min.css" %}" /> 
+    <link rel="stylesheet" href="{% static "home/odometer.min.css" %}" /> 
+    <link rel="stylesheet" href="{% static "home/fancybox.css" %}" /> 
+    <link rel="stylesheet" href="{% static "home/aos.css" %}" /> 
+    <link rel="stylesheet" href="{% static "home/style.css" %}" /> 
+    <link rel="stylesheet" href="{% static "home/dark-theme.css" %}" /> 
+    <link rel="stylesheet" href="{% static "home/responsive.css" %}" />
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet">
+    
+    <title>JDC BANK</title>
+    <link
+      rel="icon"
+      type="image/png"
+      href="{% static "home/logo1.png" %}"
+    />
+  </head>
+  <body data-aos-easing="ease" data-aos-duration="400" data-aos-delay="0">
+    <div class="loader js-preloader" style="display: none">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    
+    
+    <div class="switch-theme-mode">
+    </br>
+    </br>
+    </br>
+      <label id="switch" class="switch">
+        <input
+          type="checkbox"
+          onchange="toggleTheme()"
+          id="slider"
+          checked="checked"
+        />
+        <span class="slider round"></span>
+      </label>
+    </div>
+
+
+    <div class="page-wrapper">
+      <header class="header-wrap style1">
+        <div class="header-bottom">
+          <div class="container">
+            <nav class="navbar navbar-expand-md navbar-light">
+              <a
+                class="navbar-brand"
+                href="#"
+              >
+                <img class="logo-light" style="width:30px" src="{% static "home/logo.png" %}" alt="logo"/>
+                <img
+                  class="logo-dark" style="width:30px"
+                  src="{% static "home/logo.png" %}"
+                  alt="logo"
+                />
+              </a>
+              <h3 class="mt-1"> JDC BANK</h3>
+              <div
+                class="collapse navbar-collapse main-menu-wrap"
+                id="navbarSupportedContent">
+                <div class="menu-close xl-none">
+                  <a href="javascript:void(0)">
+                    <i class="ri-close-line"></i
+                  ></a>
+                </div>
+                <ul class="navbar-nav ms-auto">
+                  <li class="nav-item has-dropdown">
+                    <span class="menu-expand"
+                      ><i class="ri-arrow-down-s-line"></i
+                    ></span>
+                    <a href="{% url 'home' %}" class="nav-link active">
+                      Home 
+                      
+                    </a>
+                    
+                  </li>
+                  <li class="nav-item">
+                    <a
+                      href="#"
+                      class="nav-link"
+                    >
+                      About Us
+                    </a>
+                  </li>
+                  <li class="nav-item has-dropdown">
+                    <span class="menu-expand"
+                      ></span>
+                    <a href="{% url 'dash' %}" class="nav-link">
+                      Service
+                      
+                    </a>
+                    
+                  </li>
+                  
+                  
+                  <li class="nav-item">
+                    <a
+                     href="{% url 'contact2' %}"
+                      class="nav-link"
+                      >Contact Us</a
+                    >
+                  </li>
+                  <li class="nav-item xl-none">
+                    <a
+                      href="{% url 'logger' %}"
+                      class="btn style1"
+                      >LOG IN</a
+                    >
+                  </li>
+                </ul>
+                <div class="others-options lg-none">
+                  <div class="header-btn lg-none">
+                    <a
+                      href="{% url 'logger' %}"
+                      class="btn style1 bg-success"
+                      >LOG IN</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </nav>
+            
+            <div class="mobile-bar-wrap">          
+              <div class="mobile-menu xl-none">
+                <a href="javascript:void(0)"><i class="ri-menu-line"></i></a>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+      </header>
+
+      <section class="hero-wrap style1 bg-spring">
+        <img
+          src="{% static "home/hero-shape-1.png" %}"
+          alt="Image"
+          class="hero-shape-one"
+        />
+        <img
+          src="{% static "home/hero-shape-2.png" %}"
+          alt="Image"
+          class="hero-shape-two"
+        />
+        <img
+          src="{% static "home/hero-shape-3.png" %}"
+          alt="Image"
+          class="hero-shape-three"
+        />
+        <img
+          src="{% static "home/hero-shape-4.png" %}"
+          alt="Image"
+          class="hero-shape-four md-none"
+        />
+        <div class="hero-slider-two owl-carousel owl-loaded owl-drag">
+          <div class="owl-stage-outer owl-height" style="height: 686.367px">
+            <div
+              class="owl-stage"
+              style="
+                transform: translate3d(-3077px, 0px, 0px);
+                transition: all 0s ease 0s;
+                width: 10772px;
+              "
+            >
+              
+              
+              <div class="owl-item" style="width: 1518.8px; margin-right: 20px">
+                <div class="hero-slide-item">
+                  <div class="container-fluid">
+                    <div class="row align-items-center">
+                      <div class="col-lg-6">
+                        <div class="hero-content">
+                          <span>Online Banking </span>
+                          <h1>Secured &amp; Easy Online Banking Solution</h1>
+                          <p>
+                            Our online banking system is available to you 24/7, we are always there when you need it with 
+                            minimal to no down time and fast and secure transactions.
+                          </p>
+                        </div>
+                      </div>
+                      <div class="col-lg-6">
+                        <div class="hero-img-wrap">
+                          <img src="{% static "home/hero-slide-6.png" %}" alt="Image" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="owl-item" style="width: 1518.8px; margin-right: 20px">
+                <div class="hero-slide-item">
+                  <div class="container-fluid">
+                    <div class="row align-items-center">
+                      <div class="col-lg-6">
+                        <div class="hero-content">
+                          <span>Investment apportunities </span>
+                          <h1>stocks and bonds</h1>
+                          <p>
+                            We are here for you in securing the best investment portfolio, 
+                            dont just invest blind, invest with us and we will help you grow.
+                          </p>
+                        </div>
+                      </div>
+                      <div class="col-lg-6">
+                        <div class="hero-img-wrap">
+                          <img src="{% static "home/hero-slide-5.png" %}" alt="Image" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              
+              
+            </div>
+          </div>
+          <div class="owl-nav">
+            <button type="button" role="presentation" class="owl-prev">
+              <i class="ri-arrow-left-s-line"></i></button
+            ><button type="button" role="presentation" class="owl-next">
+              <i class="ri-arrow-right-s-line"></i>
+            </button>
+          </div>
+          <div class="owl-dots disabled"></div>
+        </div>
+      </section>
+
+      <section class="security-wrap ptb-100">
+        <div class="container">
+          <div class="row gx-5 align-items-center">
+            <div class="col-lg-6 col-12 order-lg-1 order-2">
+              <div class="security-content">
+                <div class="content-title style1">
+                  <span>Who we Are</span>
+                  <h2>About Us</h2>
+                  <p>
+                    JDC Bank is amongs the pioneer of first fully secure digital bank, and one of worlds’s most resilient banks. With decades of experience in the business of banking, the Bank has remained innovative in delivering value to its stakeholders. The publicly quoted company has successfully built a legacy of trust and resilience that has won it the loyalty of its customers. The Bank is constantly introducing products and services tailored to the needs of its customers at every stage of their lives. It is a proud partner to more than one million individuals, families and businesses across The world, helping them achieve their personal and financial goals.
+                  </p>
+                </div>
+                <div class="feature-item-wrap">
+                  <div class="feature-item">
+                    <div class="feature-icon">
+                      <img src="{% static "home/security-icon-1.png" %}" alt="Image" />
+                    </div>
+                    <div class="feature-text">
+                      <h3>A Mission For Every Day</h3>
+                      <p>
+                        If we were soldiers, this would be the mantra we scream before every battle. It is what we live for:
+                        Empowering lives through innovation
+                      </p>
+                    </div>
+                  </div>
+                  <div class="feature-item">
+                    <div class="feature-icon">
+                      <img src="{% static "home/security-icon-2.png" %}" alt="Image" />
+                    </div>
+                    <div class="feature-text">
+                      <h3>A Vision Set In Stone</h3>
+                      <p>
+                        When people ask us what has kept us going for so long, our answer is always the same:
+                        To be the dominant digital platform delivering seamless financial services.
+                        We strive to position ourselves as a leader in financial services market through digital innovation
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6 col-12 order-lg-2 order-1">
+              <div class="security-img-wrap">
+                <img
+                  src="{% static "home/security-shape-1.png" %}"
+                  alt="Image"
+                  class="security-shape-one"
+                />
+                <img
+                  src="{% static "home/security-shape-2.png" %}"
+                  alt="Image"
+                  class="security-shape-two"
+                />
+                <img src="{% static "home/security-2.jpg" %}" alt="Image" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      
+
+      <section class="cta-wrap style1 ptb-100">
+        <div class="container">
+          <img
+            src="{% static "home/cta-shape-1.png" %}"
+            alt="Image"
+            class="cta-shape-one xs-none"
+          />
+          <img
+            src="{% static "home/cta-shape-2.png" %}"
+            alt="Image"
+            class="cta-shape-two xs-none"
+          />
+          <div class="row">
+            <div class="col-xl-6 offset-xl-3 col-lg-8 offset-lg-2">
+              <div class="content-title style1 text-center mb-40">
+                <span>Our company</span>
+                <h2>Business practices</h2>
+                <p>Part of driving responsible growth is maintaining strong guidelines for business practices and professional and personal conduct that all employees, and anyone who acts on our behalf, are expected to adopt and uphold. This translates into the actions we take as we engage with customers, clients, shareholders, suppliers and each other. </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <footer class="footer-wrap bg-rock">
+        <div class="container">
+          <img
+            src="{% static "home/footer-shape-1.png" %}"
+            alt="Image"
+            class="footer-shape-one"
+          />
+          <img
+            src="{% static "home/footer-shape-2.png" %}"
+            alt="Image"
+            class="footer-shape-two"
+          />
+          <div class="row pt-100 pb-75">
+            <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6">
+              <div class="footer-widget">
+                <a
+                  
+                  class="footer-logo"
+                >
+                  <img src="{% static "home/logo1.png" %}" alt="Image" />
+                </a>
+                <p class="comp-desc">
+                  We know you work hard to make life better for yourself and the people you care about most. We believe in providing solutions to help you do this throughout your life. Because we value your relationship with us, our promise to you is to always listen to you, provide advice when you need it, and strive to exceed your expectations. Every one of us at JDC Bank believes in this promise and strives to deliver on it each day. And it's the reason we will always approach your needs with a question centered squarely on you.
+                </p>
+                <div class="social-link">
+                  <ul class="social-profile list-style style1">
+                    <li>
+                      <a target="_blank" >
+                        <i class="ri-facebook-fill"></i>
+                      </a>
+                    </li>
+                    <li>
+                      <a target="_blank" >
+                        <i class="ri-twitter-fill"></i>
+                      </a>
+                    </li>
+                    <li>
+                      <a target="_blank" >
+                        <i class="ri-linkedin-fill"></i>
+                      </a>
+                    </li>
+                    <li>
+                      <a target="_blank" >
+                        <i class="ri-pinterest-fill"></i>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
+              <div class="footer-widget">
+                <h3 class="footer-widget-title">Our Company</h3>
+                <ul class="footer-menu list-style">
+                  <li>
+                    <a
+                      
+                    >
+                    <i class="ri-arrow-right-s-line"></i>
+                      Company &amp; Team
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      
+                    >
+                    <i class="ri-arrow-right-s-line"></i>
+                      Services
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      
+                    >
+                    <i class="ri-arrow-right-s-line"></i>
+                      News &amp; Blog
+                    </a>
+                  </li>
+                  
+                  <li>
+                    <a
+                      
+                    >
+                    <i class="ri-arrow-right-s-line"></i>
+                      Privacy Policy
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-xl-2 col-lg-2 col-md-6 col-sm-6">
+              <div class="footer-widget">
+                <h3 class="footer-widget-title">Products</h3>
+                <ul class="footer-menu list-style">
+                  <li>
+                    <a
+                      
+                    >
+                    <i class="ri-arrow-right-s-line"></i>
+                      Online Payment
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      
+                    >
+                    <i class="ri-arrow-right-s-line"></i>
+                      Deposit Skim
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      
+                    >
+                    <i class="ri-arrow-right-s-line"></i>
+                      Online Shopping
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      
+                    >
+                    <i class="ri-arrow-right-s-line"></i>
+                      Master Card
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      
+                    >
+                    <i class="ri-arrow-right-s-line"></i>
+                      Receive Money
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      
+                    >
+                    <i class="ri-arrow-right-s-line"></i>
+                      Affiliate Program
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
+              <div class="footer-widget">
+                <h3 class="footer-widget-title">Subscribe</h3>
+                <p class="newsletter-text">
+                  Subscribe to us for latest news on products and services
+                </p>
+                <form action="#" class="newsletter-form">
+                  <input type="email" placeholder="Your Email" />
+                  <button type="button">Subscribe</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="copyright-text">
+          <p>
+            <i class="ri-copyright-line"></i>2023 JDC BANK. All Rights Reserved By
+            <a  target="_blank">DJC GLOBAL</a>
+          </p>
+        </div>
+      </footer>
+    </div>
+
+    <a
+      href="javascript:void(0)"
+      class="back-to-top bounce"
+      style="display: none"
+      ><i class="ri-arrow-up-s-line"></i>
+    </a>
+
+    <script src="{% static "home/jquery.min.js" %}"> </script>
+    <script src="{% static "home/bootstrap.bundle.min.js" %}"></script>
+    <script src="{% static "home/form-validator.min.js" %}"></script>
+    <script src="{% static "home/contact-form-script.js" %}"></script>
+    <script src="{% static "home/aos.js" %}"></script>
+    <script src="{% static "home/owl.carousel.min.js" %}"></script>
+    <script src="{% static "home/odometer.min.js" %}"></script>
+    <script src="{% static "home/fancybox.js" %}"></script>
+    <script src="{% static "home/jquery.appear.js" %}"></script>
+    <script src="{% static "home/tweenmax.min.js" %}"></script>
+    <script src="{% static "home/main.js" %}"></script>
+  </body>
+</html>
